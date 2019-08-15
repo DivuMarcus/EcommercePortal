@@ -10,7 +10,7 @@ function calculateTotal(){
     }
     if(value>0){
         if(value == 1){
-        document.getElementById(itemtotalname).innerHTML = "$49.00";
+        document.getElementById(itemtotalname).innerHTML = "49";
      }
       else{
         var total = 49*value;
@@ -18,7 +18,7 @@ function calculateTotal(){
       }
     }
     else{
-      document.getElementById(itemtotalname).innerHTML = "$0.00";
+      document.getElementById(itemtotalname).innerHTML = "0";
     } 
     sumtotal();
   }

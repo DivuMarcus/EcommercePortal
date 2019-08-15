@@ -63,6 +63,9 @@ var shopsinglewatchroutes= require('./routes/shop-single-watch');
 var shopsingletoyroutes= require('./routes/shop-single-toy');
 var shopsingletoproutes= require('./routes/shop-single-top');
 var contactRoutes = require('./routes/contact');
+var paymentRoutes = require('./routes/payment');
+var loginRoutes = require('./routes/login');
+var signupRoutes = require('./routes/signup');
 
 
 app.use('/home',homeRoutes);
@@ -98,6 +101,9 @@ app.use('/shop-single-watch',shopsinglewatchroutes);
 app.use('/shop-single-toy',shopsingletoyroutes);
 app.use('/shop-single-top',shopsingletoproutes);
 app.use('/contact',contactRoutes);
+app.use('/payment',paymentRoutes);
+app.use('/login',loginRoutes);
+app.use('/signup',signupRoutes);
 
 app.listen(3000, function(err){
   if (err) throw err;
