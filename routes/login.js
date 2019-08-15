@@ -1,7 +1,6 @@
 var router = require('express').Router();
 var User = require('../models/user');
 var bcrypt = require('bcrypt');
-var popups = require('popups');
 
 
 router.get('/',function(req,res){
@@ -27,9 +26,6 @@ router.post('/', (req, res, next) => {
                         console.log(result);
                     }
                     if (result) {
-                        popups.alert({
-                            content: 'Welcome'
-                        });
                         return res.redirect('/home');           
                     }
                     res.status(401).json({
