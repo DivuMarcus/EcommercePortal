@@ -1,6 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var ejs_mate = require('ejs-mate');
@@ -12,7 +14,8 @@ var app = express();
 var password = 'ecommerce123';
 
 mongoose.connect('mongodb+srv://tcs-ecommerce:' + password + '@ecommerce-tcs-qqgie.mongodb.net/test?retryWrites=true&w=majority',{
-  useNewUrlParser:true
+  useNewUrlParser:true,
+  useCreateIndex:true,
 },function(err){
   if(err){
     console.log(err);
@@ -25,10 +28,12 @@ mongoose.connect('mongodb+srv://tcs-ecommerce:' + password + '@ecommerce-tcs-qqg
 //Middleware
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.engine('ejs',ejs_mate);
 app.set('view engine','ejs');
+app.use(session({secret:'secret-code',cookie:{maxAge:6000}}));
 
 var homeRoutes = require('./routes/home');
 var aboutRoutes =require('./routes/about');
