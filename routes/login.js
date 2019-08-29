@@ -15,7 +15,7 @@ router.post('/', (req, res, next) => {
                 res.json({auth:false,message:"User Not Found"});
             }
             else if(req.body.password == ''){
-                res.json({auth:false,message:"No password"});
+                res.json({auth:false, message:"No password"});
             }
             else{
                     bcrypt.compare(req.body.password, user.password, (err, result) => {
@@ -23,8 +23,8 @@ router.post('/', (req, res, next) => {
                             res.json({auth:false,message: 'Auth Failed due to compare'});
                         }
                         if (result == true) {
-                            req.session.user=user;
-                            console.log(req.session.user);
+                            req.session.user = user;
+                            req.session.isLoggedIn = true;
                             res.json({auth:true});         
                         }else{
                             res.json({auth:false,message:"Incorrect Password"});                

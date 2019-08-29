@@ -7,15 +7,13 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var ejs_mate = require('ejs-mate');
 
-var User = require('./models/user');
-
 var app = express();
 
 var password = 'ecommerce123';
 
 mongoose.connect('mongodb+srv://tcs-ecommerce:' + password + '@ecommerce-tcs-qqgie.mongodb.net/test?retryWrites=true&w=majority',{
   useNewUrlParser:true,
-  useCreateIndex:true,
+  useCreateIndex:true
 },function(err){
   if(err){
     console.log(err);
@@ -33,7 +31,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.engine('ejs',ejs_mate);
 app.set('view engine','ejs');
-app.use(session({secret:'secret-code',cookie:{maxAge:6000}}));
+app.use(session({
+  secret:'secret-code',
+  saveUninitialized:false,
+  resave:false,
+  activeDuration: 5*60*1000,
+  duration: 30*60*1000,
+  cookie:{maxAge:30*60*1000}
+}));
 
 var homeRoutes = require('./routes/home');
 var aboutRoutes =require('./routes/about');
@@ -71,7 +76,7 @@ var contactRoutes = require('./routes/contact');
 var paymentRoutes = require('./routes/payment');
 var loginRoutes = require('./routes/login');
 var signupRoutes = require('./routes/signup');
-
+var profileRoutes = require('./routes/profile');
 
 app.use('/home',homeRoutes);
 app.use('/about',aboutRoutes);
@@ -109,6 +114,7 @@ app.use('/contact',contactRoutes);
 app.use('/payment',paymentRoutes);
 app.use('/login',loginRoutes);
 app.use('/signup',signupRoutes);
+app.use('/profile',profileRoutes);
 
 app.listen(3000, function(err){
   if (err) throw err;

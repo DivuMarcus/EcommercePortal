@@ -1,27 +1,15 @@
-var mongoose = require('mongoose');
-var Schema =  mongoose.Schema;
 var router = require('express').Router();
+var User = require('../models/user');
 
 router.get('/',function(req,res){
-  res.render('main/cart');
+  if(req.session.user == undefined){
+    res.render('main/cart',{useremail:"User"});
+  }
+    else{
+    User.findOne({ email: req.session.user.email }, function (err, user) {
+      res.render('main/cart',{useremail:req.session.user.email});
+    })
+  }
 });
-
-
-
-// var CartSchema = new Schema({
-//    owner:{type: mongoose.Schema.Types.ObjectId,ref :'User'},
-//    total:{type: Number, default: 0},
-//    items:[{
-//      item:{type: mongoose.Schema.Types.ObjectId, ref: 'Product'},
-//      quantity:{type: Number, default: 1},
-//      price:{type: Number, default: 0},
-//    }]
-// });
-
-
-// module.exports = mongoose.model('Cart',CartSchema);
-
-
-
 
 module.exports = router;

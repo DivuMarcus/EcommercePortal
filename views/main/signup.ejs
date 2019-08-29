@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Shoppers &mdash; Colorlib e-Commerce Template</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+<head>
+  <title>Shoppers &mdash; Colorlib e-Commerce Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
 
-    <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/aos.css">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
-  
-    
-  </head>
-  <body>
-  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+
+
+</head>
+
+<body>
+
   <div class="site-wrap">
     <header class="site-navbar" role="banner">
       <div class="site-navbar-top">
@@ -31,10 +33,6 @@
           <div class="row align-items-center">
 
             <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-              <form action="" class="site-block-top-search">
-                <span class="icon icon-search2"></span>
-                <input type="text" class="form-control border-0" placeholder="Search">
-              </form>
             </div>
 
             <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
@@ -50,22 +48,20 @@
                   <li></li>
                   <li></li>
                   <li></li>
-                  <li><a href='/signup'><span class="icon icon-person"></span></a></li>
-                  <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+                  <li><a href='/home/dashboard'><span class="icon icon-person"></span></a></li>
+                  <li><a href="#"></a></li>
                   <li>
-                    <a href="/cart" class="site-cart">
-                      <span class="icon icon-shopping_cart"></span>
-                      <span class="count">2</span>
-                    </a>
-                  </li> 
-                  <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                    <a href="#"></a>
+                  </li>
+                  <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span
+                        class="icon-menu"></span></a></li>
                 </ul>
-              </div> 
+              </div>
             </div>
 
           </div>
         </div>
-      </div> 
+      </div>
       <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">
@@ -81,52 +77,58 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="/home">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Signup</strong></div>
+          <div class="col-md-12 mb-0"><a href="/home">Home</a> <span class="mx-2 mb-0">/</span> <strong
+              class="text-black">Signup</strong></div>
         </div>
       </div>
-    </div>  
+    </div>
 
     <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <center><h2 class="h3 mb-3 text-black">Signup</h2></center>
+            <center>
+              <h2 class="h3 mb-3 text-black">Signup</h2>
+            </center>
           </div>
           <div class="my-col-md-7">
 
-            <form action="/signup" method="post">
-              
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="email" class="text-black">Email <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="email" name="email">
-                  </div>
+            <form onsubmit="return false;">
+
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="email" class="text-black">Email <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="email" name="email" required>
                 </div>
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="password" class="text-black" name="password1">Password <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" id="password1" name="password">
-                  </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="password" class="text-black" name="password1">Password <span
+                      class="text-danger">*</span></label>
+                  <input type="password" class="form-control" id="password1" name="password" required>
                 </div>
-                <div class="form-group row">
-                        <div class="col-md-6">
-                          <label for="password" name="password2" class="text-black">Re-enter Password <span class="text-danger">*</span></label>
-                          <input type="password" class="form-control" id="password2" onchange='check()'>
-                        </div>
-                      </div>
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <input type="submit" id="submit" class="btn btn-primary btn-lg btn-block" value="Signup">
-                  </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="password" name="password2" class="text-black">Re-enter Password <span
+                      class="text-danger">*</span></label>
+                  <input type="password" class="form-control" id="password2" onchange='check()' required>
                 </div>
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <center><strong><a href="/login">Already An Account! Login -></a></strong></center>
-                    </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <button type="submit" onclick="signup()" id="submit"
+                    class="btn btn-primary btn-lg btn-block">Signup</button>
                 </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <center><strong><a href="/login">Already An Account! Login -></a></strong></center>
+                </div>
+              </div>
 
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -168,7 +170,7 @@
             <a href="#" class="block-6">
               <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
               <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-              <p>Promo from  nuary 15 &mdash; 25, 2019</p>
+              <p>Promo from nuary 15 &mdash; 25, 2019</p>
             </a>
           </div>
           <div class="col-md-6 col-lg-3">
@@ -182,11 +184,11 @@
             </div>
 
             <div class="block-7">
-              <form action="#" method="post">
+              <form action="#" name="details">
                 <label for="email_subscribe" class="footer-heading">Subscribe</label>
                 <div class="form-group">
-                  <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
-                  <input type="submit" class="btn btn-sm btn-primary" value="Send">
+                  <input type="text" class="form-control py-4" name="email_subscribe" placeholder="Email">
+                  <input type="button" class="btn btn-sm btn-primary" value="Send" onclick="send()";>
                 </div>
               </form>
             </div>
@@ -194,9 +196,9 @@
         </div>
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
-          
+
           </div>
-          
+
         </div>
       </div>
     </footer>
@@ -205,13 +207,52 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
   <script src="js/popper.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/passwordvalidation.js"></script>
-
+  <script type="text/javascript" src="js/subscribe.js"></script>
   <script src="js/main.js"></script>
-    
-  </body>
+  <script>
+    function signup() {
+      console.log("Signup");
+
+      document.getElementById('submit').disabled = false;
+      var email = document.getElementById('email').value;
+      var password1 = document.getElementById("password1").value;
+      var password2 = document.getElementById("password2").value;
+      console.log(password1);
+      console.log(password2);
+      // If Not same return False.     
+      if (password1 != password2) {
+        alert("Password did not match: Please try again...")
+        document.getElementById('submit').disabled = true;
+      }
+
+      // If same return True. 
+      else {
+        document.getElementById('submit').disabled = false;
+        axios.post('/signup', {
+          email: email,
+          password: password1
+        })
+          .then(function (res) {
+            if (res.data.auth == false && res.data.message == "User Already Exists") {
+              alert("User Already Exists")
+            }
+            if (res.data.auth == false && res.data.message == "Something Went Wrong") {
+              alert("Something Went Wrong")
+            }
+            if (res.data.auth == true) {
+              window.location.replace("http://127.0.0.1:3000/login");
+            }
+          })
+      }
+    }
+  </script>
+
+</body>
+
 </html>

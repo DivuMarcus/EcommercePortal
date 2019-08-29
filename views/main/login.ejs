@@ -31,10 +31,6 @@
           <div class="row align-items-center">
 
             <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-              <form action="" class="site-block-top-search">
-                <span class="icon icon-search2"></span>
-                <input type="text" class="form-control border-0" placeholder="Search">
-              </form>
             </div>
 
             <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
@@ -50,13 +46,10 @@
                   <li></li>
                   <li></li>
                   <li></li>
-                  <li><a href="/signup"><span class="icon icon-person"></span></a></li>
-                  <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+                  <li><a href="/home/dashboard"><span class="icon icon-person"></span></a></li>
+                  <li><a href="#"></a></li>
                   <li>
-                    <a href="/cart" class="site-cart">
-                      <span class="icon icon-shopping_cart"></span>
-                      <span class="count">2</span>
-                    </a>
+                    <a href="#"></a>
                   </li> 
                   <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                 </ul>
@@ -170,11 +163,11 @@
             </div>
 
             <div class="block-7">
-              <form action="#" method="post">
+              <form action="#" name="details">
                 <label for="email_subscribe" class="footer-heading">Subscribe</label>
                 <div class="form-group">
-                  <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
-                  <input type="submit" class="btn btn-sm btn-primary" value="Send">
+                  <input type="text" class="form-control py-4" name="email_subscribe" placeholder="Email">
+                  <input type="button" class="btn btn-sm btn-primary" value="Send" onclick="send()";>
                 </div>
               </form>
             </div>
@@ -199,6 +192,7 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
+  <script type="text/javascript" src="js/subscribe.js"></script>
   <script>
    function login(){
      console.log("login");
@@ -215,15 +209,15 @@
     if(res.data.auth == false && res.data.message == "Incorrect Password"){
       alert("Incorrect Password")
     }
-    else if(res.data.auth == false && res.data.message == "User Not Found"){
+    if(res.data.auth == false && res.data.message == "User Not Found"){
       alert("User Not found")
     }
-    else if(res.data.auth == false && res.data.message == "Auth Failed due to compare"){
+    if(res.data.auth == false && res.data.message == "Auth Failed due to compare"){
       alert("Something Went Wrong!")
     }
-    else{
+    if(res.data.auth == true){
       window.location.replace("http://127.0.0.1:3000/home");
-    }
+    } 
   })
   .catch(function (error) {
     console.log(error);
